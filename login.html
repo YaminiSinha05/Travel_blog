@@ -1,0 +1,212 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHIVA_CHOWDARY</title>
+    <link rel="" href="https://res.cloudinary.com/dajv1tpea/image/upload/v1725457548/aadadcc3c52e21ac81ab26bf6b6965c2_ndjzo9.jpg">
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+:root{
+    --color-one:#db5d0e;
+    --color-two:#c219b7;
+    --color-three:#fed346;
+    --color-four:#fff3ee;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:"Rubic",sans-serif;
+    background: url(https://res.cloudinary.com/dajv1tpea/image/upload/v1725457548/aadadcc3c52e21ac81ab26bf6b6965c2_ndjzo9.jpg);
+    background-size: cover;
+    background-position: center;
+    backdrop-filter:blur(30px);
+}
+.container{
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+    height: 600px;
+    background-color: #fff;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 0 40px rgba(0,0,0,.6);
+}
+.right h1{
+    color: var(--color-one);
+    font-size: 2rem;
+}
+.btns {
+    display: flex;
+    gap: 1rem;
+    margin-block-end: 3rem;
+    margin-bottom: 2rem;
+}
+.container button {
+    border: none;
+    outline: none;
+    width: 100%;
+    box-shadow:0 5px 10px rgba(0,0,0,.2) ;
+    padding: 14px 1.5rem;
+    border-radius: 50px;
+    font-family: "Rubik",sans-serif;
+    font-weight: 600;
+    white-space: nowrap;
+    color: #fff;
+    transition: .3s;
+    cursor: pointer;
+}
+button:hover{
+    transform: translateY(-5px);
+}
+.btns button:nth-child(1){
+    background-color: var(--color-one);
+ }
+ .btns button:nth-child(2){
+    background-color: var(--color-three);
+    color: initial;
+ }
+ button.sign_up{
+    font-size:1.1rem;
+    margin-block: .6rem;
+    background-color: var(--color-two);
+ }
+ .left img {
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 40px;
+}
+.right{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5rem;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+}
+.right h1{
+    margin-bottom: 2rem;
+}
+form > div{
+    margin-bottom: 1rem;
+}
+form >div>input{
+    border: none;
+    outline: none;
+    background-color: var(--color-four);
+    width: 400px;
+    height: 32px;
+    border-radius: 50px;
+    padding-inline: 1rem;
+    font-family: "Rubik",sans-serif;
+    font-weight: 500;
+}
+input[type=checkbox]{
+    width: fit-content;
+    height: fit-content;
+}
+div.last{
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+    margin: 0;
+}
+.container label{
+    display: block;
+    font-weight: 600;
+    font-size: .9rem;
+    padding-bottom: .5rem;
+    color: var(--color-one);
+}
+</style>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="https://res.cloudinary.com/dajv1tpea/image/upload/v1725457548/aadadcc3c52e21ac81ab26bf6b6965c2_ndjzo9.jpg" alt="img">
+        </div>
+        <div class="right">
+            <h1>Create Account</h1>
+            <div class="btns">
+                <a href="https://accounts.google.com/signin">
+                    <button><i class="ri-google-line"></i>Sign Up With Google</button>
+                </a>
+                <a href="https://www.facebook.com/login">
+                    <button><i class="ri-facebook-circle-fill"></i>with Facebook</button>
+                </a>
+            </div>
+            <form id="signupForm">
+                <div>
+                    <label for="name">NAME</label>
+                    <input id="name" name="name" type="text" required>
+                </div>
+                <div>
+                    <label for="email">Email Or Phone</label>
+                    <input id="email" name="email" type="text" required>
+                </div>
+                <div>
+                    <label for="username">User Name</label>
+                    <input id="username" name="username" type="text" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" required>
+                </div>
+                <div class="last">
+                    <input type="checkbox" name="agree" id="agree" required>
+                    I Agree All The Terms And Conditions
+                </div>
+                <button class="sign_up" type="submit">Sign up</button>
+                <p class="text">Already Have An Account? <a href="http://127.0.0.1:5500/Blogging_Website-main/index.html">login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript code for handling form validation and submission
+        document.getElementById('signupForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting immediately
+
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const agree = document.getElementById('agree').checked;
+
+            // Simple validation
+            if (!name || !email || !username || !password || !agree) {
+                alert("Please fill all the fields and agree to the terms.");
+                return;
+            }
+
+            // Display the data (just for demonstration purposes)
+            console.log("Form Data Submitted:");
+            console.log("Name:", name);
+            console.log("Email:", email);
+            console.log("Username:", username);
+            console.log("Password:", password);
+            console.log("Agreed to Terms:", agree);
+
+            // Optionally, you can redirect or process the form data as needed
+            alert("Account created successfully!"); // Show success message
+            // For demonstration, redirect to a new page
+            window.location.href = "http://127.0.0.1:5500/Blogging_Website-main/index.html";
+        });
+    </script>
+
+</body>
+</html>
